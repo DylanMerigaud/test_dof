@@ -41,6 +41,7 @@ ioHook.registerShortcut([61], keys => {
         const response = await worker.recognize(imageCurrentCoords);
         const currentX = response.data.words[0].text;
         const currentY = response.data.words[1].text;
+        console.log(`Current pos: [${currentX},${currentY}]`);
         captureImage({ x: 1609, y: 150, w: 260, h: 150 }).getBuffer(
           Jimp.MIME_PNG,
           (error, imageHints) => {
